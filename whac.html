@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zombie Bash: Battle of the Undead</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Creepster&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        body{
+            background: url("hero\ -\ Copy.jpg");
+            background-size: cover;
+        }
+      .whac {
+        font-family: 'Creepster', cursive;
+        color: rgb(255, 255, 255);
+        letter-spacing: 1px;
+        font-weight: lighter;
+        text-align: center;
+        
+        
+        padding-top: 100px;
+        padding-bottom: 50px;
+      }
+
+      #board {
+        width: 540px;
+        height: 540px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+
+        background: url("./soil.png");
+        background-size: cover;
+        border: 3px solid white;
+        border-radius: 25px;
+      }
+
+      #board div {
+        width: 178px;
+        height: 178px;
+        background-image: url("./pipe.png");
+        background-size: cover;
+      }
+
+      #board div img {
+        width: 100px;
+        height: 100px;
+
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+      .hidden {
+        padding-bottom: 50px;
+      }
+      button{
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+        background-color: white;
+        padding: 4px 6px 4px 6px;
+        border: black;
+        border-radius: 5px;
+        font-size: larger;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header1" data-header>
+        <div class="container">
+          <a href="#" class="logo">Forsaken Furies: Shadows Unleashed</a>
+          <nav class="navbar" data-navbar>
+            <ul class="navbar-list">
+              <li class="navbar-item">
+                <a href="index.html" class="navbar-link skewBg" data-nav-link
+                  >Home</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a
+                  href="minigames.html"
+                  class="navbar-link skewBg"
+                  data-nav-link
+                  >Mini Games</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a
+                  href="index.html#char"
+                  class="navbar-link skewBg"
+                  data-nav-link
+                  >Characters</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a
+                  href="index.html#shop"
+                  class="navbar-link skewBg"
+                  data-nav-link
+                  >Merch</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a
+                  href="index.html#blog"
+                  class="navbar-link skewBg"
+                  data-nav-link
+                  >News</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a href="leaderboard.html" class="navbar-link skewBg" data-nav-link
+                  >Leader Board</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <button
+              class="nav-toggle-btn"
+              aria-label="toggle menu"
+              data-nav-toggler
+            >
+              <ion-icon name="menu-outline" class="menu"></ion-icon>
+              <ion-icon name="close-outline" class="close"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="whac">
+      <h1 style="background-color: rgba(0, 0, 0, 0.295);">Hit only the Zombie</h1>
+      <span style="font-size: 30px;">Score: </span>
+      <h2 id="score" style="font-size: 30px;">0</h2>
+      <!-- 3x3 -->
+      <div id="board"></div>
+    </div>
+
+    <div id="restart-button" class="hidden">
+      <button onclick="restartGame()">Restart</button>
+    </div>
+
+    <script src="whac.js"></script>
+    <script src="script.js" defer></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

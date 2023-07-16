@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shooting Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header1" data-header>
+            <div class="container">
+                <a href="#" class="logo">Forsaken Furies: Shadows Unleashed</a>
+                <nav class="navbar" data-navbar>
+                    <ul class="navbar-list">
+                        <li class="navbar-item">
+                            <a href="index.html" class="navbar-link skewBg" data-nav-link>Home</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="minigames.html" class="navbar-link skewBg" data-nav-link>Mini Games</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="index.html#char" class="navbar-link skewBg" data-nav-link>Characters</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="index.html#shop" class="navbar-link skewBg" data-nav-link>Merch</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="index.html#blog" class="navbar-link skewBg" data-nav-link>News</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="leaderboard.html" class="navbar-link skewBg" data-nav-link>Leader Board</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+                        <ion-icon name="menu-outline" class="menu"></ion-icon>
+                        <ion-icon name="close-outline" class="close"></ion-icon>
+                    </button>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </header>
+    <canvas id="collisioncanvas"></canvas>
+    <canvas id="canvas3" style="background-image: url(banner.jpg); background-size: contain;"></canvas>
+    
+    <div class="cursors" style="
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url('aim.png');
+  background-size: cover;"></div>
+
+    <script src="shooting.js"></script>
+    <script src="script.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
