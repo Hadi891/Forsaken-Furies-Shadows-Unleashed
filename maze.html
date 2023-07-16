@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Creepster&display=swap" rel="stylesheet">
+    <style>
+    body {
+	touch-action: pan-y;
+    color: white;
+}
+#container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #222;
+	display: grid;
+	grid-template-rows: 60% 40%;
+}
+
+#maze {
+	position: absolute;
+	width: 340px;
+	height: 240px;
+	/*background: #39a;
+	
+	align-self: center;
+	justify-self: center;
+	place-self: center center;*/
+	top: 30vh;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    color: white;
+}
+
+.mbox,
+.controls {
+	height: 100%;
+	background: #222;
+	display: grid;
+}
+
+.buttons {
+	width: 210px;
+	height: 140px;
+	background: #222;
+	align-self: center;
+	justify-self: center;
+	display: grid;
+	grid-template-rows: 70px 70px;
+	grid-template-columns: 70px 70px 70px;
+}
+
+.btn {
+	width: 60px;
+	height: 60px;
+	border: 2px #fff solid;
+	border-bottom: 2px #fff solid;
+	align-self: center;
+	justify-self: center;
+	cursor: pointer;
+	border-radius: 8px;
+	display: grid;
+	/*box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.2);*/
+}
+.chevron {
+	height: 20px;
+	width: 20px;
+	align-self: center;
+	justify-self: center;
+	color: #222;
+	font-size: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: #fff;
+}
+
+#bu {
+	grid-column-start: 2;
+}
+#bd {
+	grid-column-start: 2;
+	grid-row-start: 2;
+}
+#bl {
+	grid-column-start: 1;
+	grid-row-start: 2;
+}
+#br {
+	grid-column-start: 3;
+	grid-row-start: 2;
+}
+
+#thingie,
+#home {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	/*background: #39a;
+	transition: all .1s;*/
+}
+
+.emo {
+	position: absolute;
+	top: 4px;
+	left: 1px;
+	width: 13px;
+	height: 13px;
+	border-radius: 20px;
+	font-size: 15px;
+	line-height: 15px;
+	text-align: left;
+}
+
+.barrier {
+	position: absolute;
+	background: #fff;
+}
+
+#top {
+	top: 20px;
+	left: 20px;
+	width: 300px;
+	height: 2px;
+}
+
+#bottom {
+	top: 220px;
+	left: 20px;
+	width: 302px;
+	height: 2px;
+}
+
+/*style reset*/
+button {
+	display: inline-block;
+	border: none;
+	padding: none;
+	margin: 0;
+	outline: none;
+	--webkit-appearance: none;
+	--moz-appearance: none;
+	background: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+button:hover,
+button:focus {
+	--webkit-appearance: none;
+}
+
+button:focus {
+	outline: none;
+}
+
+button:active {
+	transform: scale(1);
+	--webkit-appearance: none; 
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header1" data-header>
+            <div class="container">
+                <a href="#" class="logo">Forsaken Furies: Shadows Unleashed</a>
+                <nav class="navbar" data-navbar>
+                    <ul class="navbar-list">
+                        <li class="navbar-item">
+                            <a href="index.html" class="navbar-link skewBg" data-nav-link>Home</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="minigames.html" class="navbar-link skewBg" data-nav-link>Mini Games</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="index.html#char" class="navbar-link skewBg" data-nav-link>Characters</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="index.html#shop" class="navbar-link skewBg" data-nav-link>Merch</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="index.html#blog" class="navbar-link skewBg" data-nav-link>News</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="leaderboard.html" class="navbar-link skewBg" data-nav-link>Leader Board</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+                        <ion-icon name="menu-outline" class="menu"></ion-icon>
+                        <ion-icon name="close-outline" class="close"></ion-icon>
+                    </button>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </header>
+    <div id="container">
+        <div class="mbox">
+        <div id="maze">
+            <div id="thingie">
+                <div class="emo" id="emo"><img src="liveswhite.png" style="width: 15px; height: auto;" alt=""></div>
+            </div>
+            <div id="home">
+                <div class="emo"><img src="sorcererwhite.png" style="width: 30px; height: auto;" alt=""></div>
+            </div>
+            <div class="barrier" id="top"></div>
+            <div class="barrier" id="bottom"></div>
+        </div>
+            </div>
+        <div class="controls">
+            <div class="buttons">
+                <button class="btn" id="bu"><div class="chevron">↑</div></button>
+                <button class="btn" id="bd"><div class="chevron">↓</div></button>
+                <button class="btn" id="bl"><div class="chevron">←</div></button>
+                <button class="btn" id="br"><div class="chevron">→</div></button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="maze.js"></script>
+    <script src="script.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
